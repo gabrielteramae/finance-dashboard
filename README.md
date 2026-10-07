@@ -32,5 +32,5 @@ Este projeto utiliza a biblioteca **Streamlit** para criar um painel web dinâmi
 
 1. **Clonar o repositório:**
    ```bash
-   git clone [https://github.com/gabrielteramae/finance-dashboard.git](https://github.com/gabrielteramae/finance-dashboard.git)
+   git clone https://github.com/gabrielteramae/finance-dashboard.git
    cd finance-dashboard
