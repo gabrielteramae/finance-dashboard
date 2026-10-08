@@ -24,8 +24,11 @@ df_filtrado = df[df['Mes'].isin(mes_selecionado)]
 if df_filtrado.empty:
     st.warning("Selecione ao menos um mês.")
 else:
-    col1, col2 = st.columns(2)
-    col1.metric("Receita Total", f"R$ {df_filtrado['Receita'].sum()}")
-    col2.metric("Despesas Total", f"R$ {df_filtrado['Despesas'].sum()}")
+    receita = float(df_filtrado["Receita"].sum())
+    despesas = float(df_filtrado["Despesas"].sum())
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Receita Total", f"R$ {receita:.2f}")
+    col2.metric("Despesas Total", f"R$ {despesas:.2f}")
+    col3.metric("Saldo", f"R$ {receita - despesas:.2f}")
     st.line_chart(df_filtrado.set_index('Mes'))
     st.write("Dados brutos:", df_filtrado)
